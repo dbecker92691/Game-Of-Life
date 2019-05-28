@@ -22,3 +22,28 @@ nextGeneration([
   [0, 0, 1],
   [1, 1, 0]
 ]
+
+
+- game-of-life-logic.js is the logic for the game provided the example given.
+
+- full-game-of-life.js is a full version of the game start to finish with the ability to produce a grid with M x N cells, and populate them as alive or dead randomly, then evlolve said grid into the new outcome.
+
+
+
+time it took:
+
+3 hours of coding + a few extra minutes to learn about what the game of life is
+
+Sources: 
+
+https://en.wikipedia.org/wiki/The_Game_of_Life
+
+https://www.youtube.com/watch?v=ouipbDkwHWA
+
+https://www.w3schools.com/js/js_random.asp
+
+https://www.w3schools.com/js/js_switch.asp
+ 
+Help recieved: 
+
+Sent to a friend (Alex Baumhoer, Sr. Developer @ ibotta) to have him check/test my code
