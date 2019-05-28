@@ -44,6 +44,8 @@ const evolveGrid = (gridHeight, gridWidth) => {
 				switch(nubberOfNeighbors){
 
 					case 0: // do nothing
+						newGeneration[j][k] = gameGrid[j][k];
+						break;
 
 					//kill cell if under populated
 					case 1: 
@@ -51,6 +53,8 @@ const evolveGrid = (gridHeight, gridWidth) => {
 						break;
 
 					case 2: // do nothing
+						newGeneration[j][k] = gameGrid[j][k];
+						break;
 
 					// cell continues to live
 					case 3: 
@@ -59,15 +63,22 @@ const evolveGrid = (gridHeight, gridWidth) => {
 
 					// do nothing
 					case 4: 
+						newGeneration[j][k] = gameGrid[j][k];
+						break;
 
 					// do nothing
 					case 5:
-
+						newGeneration[j][k] = gameGrid[j][k];
+						break;
 					// do nothing
 					case 6:
+						newGeneration[j][k] = gameGrid[j][k];
+						break;
 
 					// do nothing
 					case 7:
+						newGeneration[j][k] = gameGrid[j][k];
+						break;
 
 					// kill due to over population
 					case 8: 
