@@ -38,6 +38,23 @@ createArray(3);
 
 // populate grid
 
+const populateGrid = (height, width) => {
+	for(let j = 0; j < height; j++){
+		for(let k = 0; k < width; k++){
+
+			const getRandomNumber = Math.floor(Math.random() * 2);
+
+			if(getRandomNumber === 1){
+				gameGrid[j][k] = 1
+			}else{
+				gameGrid[j][k] = 0
+			}
+		}
+	}
+}
+	
+populateGrid(3,3);
+
 
 // loop through grid to get value at array[h][v]
 
