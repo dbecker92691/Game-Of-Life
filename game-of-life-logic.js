@@ -5,6 +5,11 @@ const gameGrid =[
 ]
 
 
+const newGeneration = [
+	[],
+	[],
+	[]
+]
 
 const evolveGrid = (gridHeight, gridWidth) => {
 	
@@ -24,7 +29,7 @@ const evolveGrid = (gridHeight, gridWidth) => {
 			numberOfNeighbors += gameGrid[j + 1][k]; // bottom center
 			numberOfNeighbors += gameGrid[j + 1][k + 1]; // bottom right
 
-			console.log(nubberOfNeighbors, "<--- counted cells");
+			console.log(numberOfNeighbors, "<--- counted cells");
 			// add logic to dead cells
 			if(gameGrid[j][k] === 0){
 				switch(numberOfNeighbors){
@@ -41,7 +46,7 @@ const evolveGrid = (gridHeight, gridWidth) => {
 
 					//add logic to dead cells
 			}else if(gameGrid[j][k] === 1){
-				switch(nubberOfNeighbors){
+				switch(numberOfNeighbors){
 
 					case 0: // do nothing
 						newGeneration[j][k] = gameGrid[j][k];
