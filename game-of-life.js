@@ -23,7 +23,11 @@ Given a board with m by n cells, each cell has an initial state live (1) or dead
 
 
 // create grid of m, n length (start with 3x3)
-const gameGrid = []
+const gameGrid = [];
+const gridHeight = 3;
+const gridWidth = 3;
+const gridRows = gridWidth;
+
 
 const createArray = (rows) => {
 	for(let i = 0; i < rows; i++){
@@ -33,7 +37,8 @@ const createArray = (rows) => {
 	return gameGrid;
 }
 
-createArray(3);
+createArray(gridRows);
+console.log(gameGrid, "<--- original game grid");
 
 
 // populate grid
@@ -53,39 +58,49 @@ const populateGrid = (height, width) => {
 	}
 }
 	
-populateGrid(3,3);
+populateGrid(gridHeight, gridWidth);
+console.log(gameGrid, "<--- populated game grid");
 
 
 // loop through grid to get value at array[h][v]
-
 // log values as alive (1) or dead (0)
 
-// if any of the following exist:
+const evolveGrid = (gridHeight, gridWidth) => {
+	for(let j = 1; j < gridHeight - 1; j++){
+		for(let k = 1; k < gridWidth - 1; k++){
 
-/* case(if cell has < 2 live neighbors === 0)
-	
-	case(if cell has 2 || 3 live neighbors === 1)
+			// log values as alive (1) or dead (0)
 
-	case(if cell has > 3 live neighbors === 0)
+			let allCells = 0;
 
-	case(if cell has === 3 dead neighbors === 1)
+			allCells += gameGrid[j - 1][k - 1]; // top left cell
+			allCells += gameGrid[j - 1][k]; // top center
+			allCells += gameGrid[j - 1][k + 1]; // top right
+			allCells += gameGrid[j][k - 1]; // center left
+			allCells += gameGrid[j][k]; // center
+			allCells += gameGrid[j][k + 1]; // center left
+			allCells += gameGrid[j + 1][k - 1]; //botton left
+			allCells += gameGrid[j + 1][k]; // bottom center
+			allCells += gameGrid[j + 1][k + 1]; // bottom right
 
-	return(new grid);
+			// add logic to dead cells
 
+			console.log(allCells);
+		}
+	}
+}
 
-*/
+evolveGrid(gridHeight, gridWidth);
 
+ 
 
-/* 
-Sources: 
+/* Sources: 
 
 https://en.wikipedia.org/wiki/The_Game_of_Life
 
 https://www.w3schools.com/js/js_random.asp
-
-*/ 
-
-
+ 
+*/
 
 
 
