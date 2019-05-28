@@ -8,15 +8,67 @@ Given a board with m by n cells, each cell has an initial state live (1) or dead
 * Write a function to compute the next state (after one update) of the board given its current state.
 */
 // Example:
-nextGeneration([
-  [1, 1, 1],
-  [1, 0, 0],
-  [1, 1, 0]
-])
+// nextGeneration([
+//   [1, 1, 1],
+//   [1, 0, 0],
+//   [1, 1, 0]
+// ])
 
-// Will return:
-[
-  [1, 1, 0],
-  [0, 0, 1],
-  [1, 1, 0]
-]
+// // Will return:
+// [
+//   [1, 1, 0],
+//   [0, 0, 1],
+//   [1, 1, 0]
+// ]
+
+
+// create grid of m, n length (start with 3x3)
+const gameGrid = []
+
+const createArray = (rows) => {
+	for(let i = 0; i < rows; i++){
+		gameGrid[i] = []
+	}
+
+	return gameGrid;
+}
+
+createArray(3);
+
+
+// populate grid
+
+
+// loop through grid to get value at array[h][v]
+
+// log values as alive (1) or dead (0)
+
+// if any of the following exist:
+
+/* case(if cell has < 2 live neighbors === 0)
+	
+	case(if cell has 2 || 3 live neighbors === 1)
+
+	case(if cell has > 3 live neighbors === 0)
+
+	case(if cell has === 3 dead neighbors === 1)
+
+	return(new grid);
+
+
+*/
+
+
+/* 
+Sources: 
+
+https://en.wikipedia.org/wiki/The_Game_of_Life
+
+https://www.w3schools.com/js/js_random.asp
+
+*/ 
+
+
+
+
+
