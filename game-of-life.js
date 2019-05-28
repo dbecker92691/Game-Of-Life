@@ -83,9 +83,7 @@ const evolveGrid = (gridHeight, gridWidth) => {
 			allCells += gameGrid[j + 1][k]; // bottom center
 			allCells += gameGrid[j + 1][k + 1]; // bottom right
 
-			// add logic to dead cells
-
-			console.log(allCells);
+			// add logic to dead cells, use switch case? 
 		}
 	}
 }
