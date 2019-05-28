@@ -32,7 +32,7 @@ nextGeneration([
 
 time it took:
 
-3 hours of coding + a few extra minutes to learn about what the game of life is
+3.5 hours of coding + a few extra to learn about what the game of life is
 
 Sources: 
 
