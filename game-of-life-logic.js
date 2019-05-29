@@ -1,35 +1,28 @@
-const gameGrid =[
-  [1, 1, 1],
-  [1, 0, 0],
-  [1, 1, 0]
-]
+const evolveGrid = (gameGrid) => {
 
-
-const newGeneration = [
-	[],
-	[],
-	[]
-]
-
-const retrieveFromGrid = (x, y) => {
 	const gridHeight = gameGrid.length;
 	const gridWidth = gameGrid[0].length;
 
+	const retrieveFromGrid = (x, y) => {
 		if (x < 0 || x >= gridWidth) {
 			return 0;
 		}
-
+	
 		if (y < 0 || y >= gridHeight) {
 			return 0;
 		}
-
-	return gameGrid[x][y];
-}
-
-const evolveGrid = (gridHeight, gridWidth) => {
 	
-	for(let j = 0; j < gridWidth; j++){
-		for(let k = 0; k < gridHeight; k++){
+		return gameGrid[x][y];
+	}
+
+	const newGeneration = [
+		[],
+		[],
+		[]
+	];
+	
+	for(let j = 0; j < gridWidth; j++) {
+		for(let k = 0; k < gridHeight; k++) {
 
 			// log values as alive (1) or dead (0)
 			let numberOfNeighbors = 0;
@@ -48,80 +41,29 @@ const evolveGrid = (gridHeight, gridWidth) => {
 
 			console.log(numberOfNeighbors, "<--- counted cells");
 
-			// add logic to dead cells
-			if(gameGrid[j][k] === 0){
-				switch(numberOfNeighbors){
-
-					// if dead cell has === 3 neighbors revive it
-					case 3: 
-						newGeneration[j][k] = 1;
-						break;
-
-					// else leave dead
-					default: 
-						newGeneration[j][k] = 0;
-					}
-
-					//add logic to dead cells
-			}else if(gameGrid[j][k] === 1){
-				switch(numberOfNeighbors){
-
-					case 0: // do nothing
-						newGeneration[j][k] = gameGrid[j][k];
-						break;
-
-					//kill cell if under populated
-					case 1: 
-						newGeneration[j][k] = 0;
-						break;
-
-					case 2: // do nothing
-						newGeneration[j][k] = gameGrid[j][k];
-						break;
-
-					// cell continues to live
-					case 3: 
-						newGeneration[j][k] = 1;
-						break;
-
-					// do nothing
-					case 4: 
-						newGeneration[j][k] = gameGrid[j][k];
-						break;
-
-					// do nothing
-					case 5:
-						newGeneration[j][k] = gameGrid[j][k];
-						break;
-					// do nothing
-					case 6:
-						newGeneration[j][k] = gameGrid[j][k];
-						break;
-
-					// do nothing
-					case 7:
-						newGeneration[j][k] = gameGrid[j][k];
-						break;
-
-					// kill due to over population
-					case 8: 
-						newGeneration[j][k] = 0;
-						break;
-
-					default: 
-						newGeneration[j][k] = 0; 
+			// Add logic to dead cells
+			if (gameGrid[j][k] === 0) {
+				if (numberOfNeighbors === 3) {
+					newGeneration[j][k] = 1;
+				} else {
+					newGeneration[j][k] = 0;
+				}
+			// Add logic to live cells
+			} else {
+				if (numberOfNeighbors < 2) {
+					newGeneration[j][k] = 0;
+				} else if (numberOfNeighbors > 3) {
+					newGeneration[j][k] = 0;
+				} else {
+					newGeneration[j][k] = 1;
 				}
 			}
 		}
 	}
 
-	// return new generation
-	for(let j = 0; j < gridHeight; j++){
-		for(let k = 0; k < gridWidth; k++){
-			gameGrid[j][k] = newGeneration[j][k];
-		}
-	}
+	return newGeneration;
 }
 
-evolveGrid(3,3);
-console.log(gameGrid, "<---- new generation")
+const start = [ [1, 1, 1], [1, 0, 0], [1, 1, 0] ];
+const end = evolveGrid(start);
+console.log(end, "<---- new generation");

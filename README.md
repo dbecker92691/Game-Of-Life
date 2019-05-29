@@ -49,9 +49,11 @@ However I kept having my new generations come back as largely 'undefined'. The p
 
 - updated try catch to be function that checks the cell to see if it's in/out of bounds. The following evolveGrid function will run the switch case block to execute evolution rules.
 
+- updated swich case to if else statements to condense and clean up code.
+
 
 Things I learned:
-- The try catch block was imparitive to get my evolution logic working. The problem centered around not having an accurate representation of alive and dead cells before I was entering my switch case block. Once I figured that out everything started working as I had it. 
+- The try catch block was imparitive to get my evolution logic working. The problem centered around not having an accurate representation of alive and dead cells before I was entering my switch case block. Once I figured that out everything started working as I had it. From there I was able to condense and clean up the code pretty easily.
 
 
 
