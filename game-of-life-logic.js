@@ -13,8 +13,8 @@ const newGeneration = [
 
 const evolveGrid = (gridHeight, gridWidth) => {
 	
-	for(let j = 1; j <= gridWidth.length - 1; j++){
-		for(let k = 1; k <= gridHeight.length -1; k++){
+	for(let j = 1; j < gridHeight - 1; j++){
+		for(let k = 1; k < gridWidth -1; k++){
 
 			// log values as alive (1) or dead (0)
 			let numberOfNeighbors = 0;
@@ -44,8 +44,6 @@ const evolveGrid = (gridHeight, gridWidth) => {
 					default: 
 						newGeneration[j][k] = 0;
 					}
-
-					//add logic to dead cells
 			}else if(gameGrid[j][k] === 1){
 				switch(numberOfNeighbors){
 
@@ -94,7 +92,7 @@ const evolveGrid = (gridHeight, gridWidth) => {
 					default: 
 						newGeneration[j][k] = 0; 
 				}
-			}
+			}	
 		}
 	}
 
