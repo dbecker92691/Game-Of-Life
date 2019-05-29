@@ -60,8 +60,8 @@ const evolveGrid = (gridHeight, gridWidth) => {
 			// log values as alive (1) or dead (0)
 			let numberOfNeighbors = 0;
 
-			//numberOfNeighbors += gameGrid[j][k]; // center is itself not a neighbor
 
+			//numberOfNeighbors += gameGrid[j][k]; // center is itself not a neighbor
 			numberOfNeighbors += retrieveFromGrid(j - 1, k - 1); // top left cell
 			numberOfNeighbors += retrieveFromGrid(j - 1, k); // top center
 			numberOfNeighbors += retrieveFromGrid(j - 1, k + 1); // top right
