@@ -27,7 +27,7 @@ nextGeneration([
 # Code Breakdown:
 - game-of-life-logic.js is the logic for the game provided the example given.
 
-full-game-of-life.js is a full version of the game start to finish with the ability to produce a grid with M x N cells, and populate them as alive or dead randomly, then evolve said grid into the new outcome.
+- full-game-of-life.js is a full version of the game start to finish with the ability to produce a grid with M x N cells, and populate them as alive or dead randomly, then evolve said grid into the new outcome.
 
 #Run directions:
 - Node needs to be installed
