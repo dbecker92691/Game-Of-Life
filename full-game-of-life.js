@@ -38,7 +38,7 @@ const populateGrid = (height, width) => {
 // loop through grid to get value at array[h][w]
 // log values as alive (1) or dead (0)
 
-const evolveGrid = (gameGrid) => {
+const evolveGrid = (gameGrid) =>  {
 
 	const gridHeight = gameGrid.length;
 	const gridWidth = gameGrid[0].length;
@@ -55,7 +55,9 @@ const evolveGrid = (gameGrid) => {
 		return gameGrid[x][y];
 	}
 
-	let innerNewGen = newGeneration;
+	const innerNewGen = newGeneration;
+
+	console.log(innerNewGen, "<--- inner new gen start");
 	
 	for(let j = 0; j < gridWidth; j++) {
 		for(let k = 0; k < gridHeight; k++) {
@@ -101,20 +103,20 @@ const evolveGrid = (gameGrid) => {
 }
 
 
-const playTheGame = (rows, height, width, grid) => {
+const playTheGame = (rows, height, width) => {
 	createArray(rows);
-		console.log(grid, "<---- original game grid");
+		console.log(gameGrid, "<---- original game grid");
 		console.log(newGeneration, "<--- original new gen");
 
 	populateGrid(height, width);
-		console.log(grid, "<--- populated game grid");
+		console.log(gameGrid, "<--- populated game grid");
 
-	evolveGrid(grid);
-		console.log(grid, "<--- new gen");
+	evolveGrid(gameGrid);
+		console.log(gameGrid, "<--- new gen");
 }
 
 
-playTheGame(gridRows, gridHeight, gridWidth, gameGrid);
+playTheGame(gridRows, gridHeight, gridWidth);
 
 
 
