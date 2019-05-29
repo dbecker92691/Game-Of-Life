@@ -40,14 +40,19 @@ Sources:
 - https://www.w3schools.com/js/js_switch.asp
  
 Help recieved: 
-- Sent to a friend (Alex Baumhoer, Sr. Developer @ ibotta) to have him check/test my code
+- Sent to a friend to have him check/test my code
 
 
 Prolems and hardships:
 - Biggest issue was with writing the evolution logic. I used a switch case to provide the evloution conditions. 
-However I kept having my new generations come back as largely 'undefined'. The problem was ---- To fix if I ----
+However I kept having my new generations come back as largely 'undefined'. The problem was not accounting for out of bounds or NaN values. To fix it I added a try catch block to accurately check a cell's neighbor accounting for the previous mistake.
+
+- updated try catch to be function that checks the cell to see if it's in/out of bounds. The following evolveGrid function will run the switch case block to execute evolution rules.
 
 
 Things I learned:
+- The try catch block was imparitive to get my evolution logic working. The problem centered around not having an accurate representation of alive and dead cells before I was entering my switch case block. Once I figured that out everything started working as I had it. 
+
+
 
 
