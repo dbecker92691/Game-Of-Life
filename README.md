@@ -31,19 +31,23 @@ nextGeneration([
 
 
 time it took:
-
-3.5 hours of coding + a few extra to learn about what the game of life is
+- 3 hours (broken up over the day) of coding + a few extra to learn about what the game of life is
 
 Sources: 
-
-https://en.wikipedia.org/wiki/The_Game_of_Life
-
-https://www.youtube.com/watch?v=ouipbDkwHWA
-
-https://www.w3schools.com/js/js_random.asp
-
-https://www.w3schools.com/js/js_switch.asp
+- https://en.wikipedia.org/wiki/The_Game_of_Life
+- https://www.youtube.com/watch?v=ouipbDkwHWA
+- https://www.w3schools.com/js/js_random.asp
+- https://www.w3schools.com/js/js_switch.asp
  
 Help recieved: 
+- Sent to a friend (Alex Baumhoer, Sr. Developer @ ibotta) to have him check/test my code
 
-Sent to a friend (Alex Baumhoer, Sr. Developer @ ibotta) to have him check/test my code
+
+Prolems and hardships:
+- Biggest issue was with writing the evolution logic. I used a switch case to provide the evloution conditions. 
+However I kept having my new generations come back as largely 'undefined'. The problem was ---- To fix if I ----
+
+
+Things I learned:
+
+

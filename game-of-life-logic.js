@@ -13,21 +13,84 @@ const newGeneration = [
 
 const evolveGrid = (gridHeight, gridWidth) => {
 	
-	for(let j = 1; j < gridHeight - 1; j++){
-		for(let k = 1; k < gridWidth -1; k++){
+	for(let j = 0; j < gridWidth; j++){
+		for(let k = 0; k < gridHeight; k++){
 
 			// log values as alive (1) or dead (0)
 			let numberOfNeighbors = 0;
 
-			numberOfNeighbors += gameGrid[j - 1][k - 1]; // top left cell
-			numberOfNeighbors += gameGrid[j - 1][k]; // top center
-			numberOfNeighbors += gameGrid[j - 1][k + 1]; // top right
-			numberOfNeighbors += gameGrid[j][k - 1]; // center left
-			numberOfNeighbors += gameGrid[j][k]; // center
-			numberOfNeighbors += gameGrid[j][k + 1]; // center left
-			numberOfNeighbors += gameGrid[j + 1][k - 1]; //botton left
-			numberOfNeighbors += gameGrid[j + 1][k]; // bottom center
-			numberOfNeighbors += gameGrid[j + 1][k + 1]; // bottom right
+			try {
+				const val = gameGrid[j - 1][k - 1]; // top left cell
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+
+			try {
+				const val = gameGrid[j - 1][k]; // top center
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+
+			try {
+				const val = gameGrid[j - 1][k + 1]; // top right
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+
+			try {
+				const val = gameGrid[j][k - 1]; // center left
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+
+			try {
+				const val = gameGrid[j][k + 1]; // center left
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+
+			try {
+				const val = gameGrid[j + 1][k - 1]; //botton left
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+
+			try {
+				const val = gameGrid[j + 1][k]; // bottom center
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+
+			try {
+				const val = gameGrid[j + 1][k + 1]; // bottom right
+				if(val) {
+					numberOfNeighbors += val;
+				}
+			} catch {
+			
+			}
+			
 
 			console.log(numberOfNeighbors, "<--- counted cells");
 
@@ -44,6 +107,8 @@ const evolveGrid = (gridHeight, gridWidth) => {
 					default: 
 						newGeneration[j][k] = 0;
 					}
+
+					//add logic to dead cells
 			}else if(gameGrid[j][k] === 1){
 				switch(numberOfNeighbors){
 
@@ -86,21 +151,26 @@ const evolveGrid = (gridHeight, gridWidth) => {
 
 					// kill due to over population
 					case 8: 
-						newGeneration[j][k] = 0;
+						[j][k] = 0;
 						break;
 
 					default: 
 						newGeneration[j][k] = 0; 
 				}
-			}	
+			}
 		}
 	}
+
+	console.log(newGeneration);
+
 
 	// return new generation
 
 	for(let j = 0; j < gridHeight; j++){
 		for(let k = 0; k < gridWidth; k++){
 			gameGrid[j][k] = newGeneration[j][k];
+
+			return gameGrid;
 		}
 	}
 }
