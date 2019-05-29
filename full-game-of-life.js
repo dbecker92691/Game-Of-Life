@@ -1,10 +1,11 @@
-// create grid of m, n length (start with 3x3)
+// game variables
 const gameGrid = [];
 const newGeneration = [];
-const gridHeight = 5;
-const gridWidth = 5;
+const gridHeight = 3;
+const gridWidth = 3;
 const gridRows = gridWidth;
 
+// create grid of m, n length (start with 3x3)
 
 const createArray = (rows) => {
 	for(let i = 0; i < rows; i++){
@@ -54,11 +55,7 @@ const evolveGrid = (gameGrid) => {
 		return gameGrid[x][y];
 	}
 
-	const newGeneration = [
-		[],
-		[],
-		[]
-	];
+	let innerNewGen = newGeneration;
 	
 	for(let j = 0; j < gridWidth; j++) {
 		for(let k = 0; k < gridHeight; k++) {
@@ -78,46 +75,46 @@ const evolveGrid = (gameGrid) => {
 			numberOfNeighbors += retrieveFromGrid(j + 1, k + 1); // bottom right;
 			
 
-			console.log(numberOfNeighbors, "<--- counted cells");
+			// console.log(numberOfNeighbors, "<--- counted cells");
 
 			// Add logic to dead cells
 			if (gameGrid[j][k] === 0) {
 				if (numberOfNeighbors === 3) {
-					newGeneration[j][k] = 1;
+					innerNewGen[j][k] = 1;
 				} else {
-					newGeneration[j][k] = 0;
+					innerNewGen[j][k] = 0;
 				}
 			// Add logic to live cells
 			} else {
 				if (numberOfNeighbors < 2) {
-					newGeneration[j][k] = 0;
+					innerNewGen[j][k] = 0;
 				} else if (numberOfNeighbors > 3) {
-					newGeneration[j][k] = 0;
+					innerNewGen[j][k] = 0;
 				} else {
-					newGeneration[j][k] = 1;
+					innerNewGen[j][k] = 1;
 				}
 			}
 		}
 	}
 
-	return newGeneration;
+	return innerNewGen;
 }
 
 
-const playTheGame = (rows, height, width) => {
+const playTheGame = (rows, height, width, grid) => {
 	createArray(rows);
-		console.log(gameGrid, "<---- original game grid");
+		console.log(grid, "<---- original game grid");
 		console.log(newGeneration, "<--- original new gen");
 
 	populateGrid(height, width);
-		console.log(gameGrid, "<--- populated game grid");
+		console.log(grid, "<--- populated game grid");
 
-	evolveGrid(height, width);
-		console.log(gameGrid, "<--- new gen");
+	evolveGrid(grid);
+		console.log(grid, "<--- new gen");
 }
 
 
-playTheGame(gridRows, gridHeight, gridWidth);
+playTheGame(gridRows, gridHeight, gridWidth, gameGrid);
 
 
 

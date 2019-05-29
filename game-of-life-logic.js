@@ -1,4 +1,4 @@
-const evolveGrid = (gameGrid) => {
+const evolveGrid = (gameGrid) =>  {
 
 	const gridHeight = gameGrid.length;
 	const gridWidth = gameGrid[0].length;
@@ -39,7 +39,7 @@ const evolveGrid = (gameGrid) => {
 			numberOfNeighbors += retrieveFromGrid(j + 1, k + 1); // bottom right;
 			
 
-			console.log(numberOfNeighbors, "<--- counted cells");
+			// console.log(numberOfNeighbors, "<--- counted cells");
 
 			// Add logic to dead cells
 			if (gameGrid[j][k] === 0) {
@@ -64,6 +64,13 @@ const evolveGrid = (gameGrid) => {
 	return newGeneration;
 }
 
-const start = [ [1, 1, 1], [1, 0, 0], [1, 1, 0] ];
+const start = [   
+	[1, 1, 1],
+	[1, 0, 0],
+	[1, 1, 0]	 
+];
+
 const end = evolveGrid(start);
 console.log(end, "<---- new generation");
+
+

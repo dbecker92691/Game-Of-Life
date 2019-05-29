@@ -24,36 +24,45 @@ nextGeneration([
 ]
 
 
+# Code Breakdown:
 - game-of-life-logic.js is the logic for the game provided the example given.
 
-- full-game-of-life.js is a full version of the game start to finish with the ability to produce a grid with M x N cells, and populate them as alive or dead randomly, then evlolve said grid into the new outcome. To execute this, update the vars gridHeight && gridWidth to be equal numbers.
+full-game-of-life.js is a full version of the game start to finish with the ability to produce a grid with M x N cells, and populate them as alive or dead randomly, then evolve said grid into the new outcome.
+
+#Run directions:
+- Node needs to be installed
+	
+	game of life logic(to execute code with example provided)
+- node game-of-life-logic.js
+	
+	full game of life
+- For full-game-of-life.js, be sure to update vars gridHeight and gridWidth to the size grid you would like to use
+- node full-game-of-life.js
 
 
-
-time it took:
+#Time it Took:
 - 3 hours (broken up over the day) of coding + a few extra to learn about what the game of life is
 
-Sources: 
+#Sources: 
 - https://en.wikipedia.org/wiki/The_Game_of_Life
 - https://www.youtube.com/watch?v=ouipbDkwHWA
 - https://www.w3schools.com/js/js_random.asp
 - https://www.w3schools.com/js/js_switch.asp
  
-Help recieved: 
+#Help received: 
 - Sent to a friend to have him check/test my code
 
 
-Prolems and hardships:
-- Biggest issue was with writing the evolution logic. I used a switch case to provide the evloution conditions. 
+#Problems and Hardships:
+- Biggest issue was with writing the evolution logic. I used a switch case to provide the evolution conditions. 
 However I kept having my new generations come back as largely 'undefined'. The problem was not accounting for out of bounds or NaN values. To fix it I added a try catch block to accurately check a cell's neighbor accounting for the previous mistake.
 
 - updated try catch to be function that checks the cell to see if it's in/out of bounds. The following evolveGrid function will run the switch case block to execute evolution rules.
 
-- updated swich case to if else statements to condense and clean up code.
+- updated switch case to if else statements to condense and clean up code.
 
 
-Things I learned:
-- The try catch block was imparitive to get my evolution logic working. The problem centered around not having an accurate representation of alive and dead cells before I was entering my switch case block. Once I figured that out everything started working as I had it. From there I was able to condense and clean up the code pretty easily.
-
+#Things I Learned:
+- The try catch block was imperative to get my evolution logic working. The problem centered around not having an accurate representation of alive and dead cells before I was entering my switch case block. Once I figured that out everything started working as I had it. From there I was able to condense and clean up the code pretty easily.
 
 
