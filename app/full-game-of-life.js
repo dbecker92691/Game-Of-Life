@@ -58,6 +58,7 @@ const evolveGrid = (gameGrid) =>  {
 	// bug was with this vv line of code: inner new gen was returning the output the same as the input
 	const innerNewGen = newGeneration;
 	
+
 	for(let j = 0; j < gridWidth; j++) {
 		for(let k = 0; k < gridHeight; k++) {
 
@@ -116,9 +117,4 @@ const playTheGame = (rows, height, width) => {
 
 
 playTheGame(gridRows, gridHeight, gridWidth);
-
-
-
-
-module.exports = playTheGame, gameGrid, newGeneration, gridHeight, gridWidth, gridRows, createArray, populateGrid, evolveGrid;
 
