@@ -64,13 +64,18 @@ const evolveGrid = (gameGrid) =>  {
 	return newGeneration;
 }
 
-const start = [   
-	[1, 1, 1],
-	[1, 0, 0],
-	[1, 1, 0]	 
+const start = [ 
+	[ 1, 0, 0 ], 
+	[ 0, 1, 1 ], 
+	[ 1, 0, 1 ] 
 ];
-
-const end = evolveGrid(start);
+const end = evolveGrid(start)
+const expectedResult = [
+  [1, 1, 0],
+  [0, 0, 1],
+  [1, 1, 0]
+]
 console.log(end, "<---- new generation");
 
+module.exports = end, start, expectedResult;
 

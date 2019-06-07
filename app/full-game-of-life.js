@@ -1,8 +1,8 @@
 // game variables
 const gameGrid = [];
 const newGeneration = [];
-const gridHeight = 3;
-const gridWidth = 3;
+const gridHeight = 5;
+const gridWidth = 5;
 const gridRows = gridWidth;
 
 // create grid of m, n length (start with 3x3)
@@ -18,7 +18,6 @@ const createArray = (rows) => {
 }
 
 // populate grid
-
 const populateGrid = (height, width) => {
 	for(let j = 0; j < height; j++){
 		for(let k = 0; k < width; k++){
@@ -33,6 +32,7 @@ const populateGrid = (height, width) => {
 		}
 	}
 }
+
 
 
 // loop through grid to get value at array[h][w]
@@ -55,9 +55,8 @@ const evolveGrid = (gameGrid) =>  {
 		return gameGrid[x][y];
 	}
 
+	// bug was with this vv line of code: inner new gen was returning the output the same as the input
 	const innerNewGen = newGeneration;
-
-	console.log(innerNewGen, "<--- inner new gen start");
 	
 	for(let j = 0; j < gridWidth; j++) {
 		for(let k = 0; k < gridHeight; k++) {
@@ -112,7 +111,7 @@ const playTheGame = (rows, height, width) => {
 		console.log(gameGrid, "<--- populated game grid");
 
 	evolveGrid(gameGrid);
-		console.log(gameGrid, "<--- new gen");
+		console.log(newGeneration, "<--- new gen");
 }
 
 
@@ -120,4 +119,6 @@ playTheGame(gridRows, gridHeight, gridWidth);
 
 
 
+
+module.exports = playTheGame, gameGrid, newGeneration, gridHeight, gridWidth, gridRows, createArray, populateGrid, evolveGrid;
 

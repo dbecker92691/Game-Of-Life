@@ -1,0 +1,23 @@
+{
+  "name": "rasa-game-of-life",
+  "version": "1.0.0",
+  "description": "",
+  "main": "full-game-of-life.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbecker92691/Rasa-Game-Of-Life.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbecker92691/Rasa-Game-Of-Life/issues"
+  },
+  "homepage": "https://github.com/dbecker92691/Rasa-Game-Of-Life#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
